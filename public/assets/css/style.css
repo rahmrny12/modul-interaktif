@@ -1,0 +1,13 @@
+.category-tab-wrapper {
+    padding: 12px 128px;
+    background-color: #e6f0f9;
+}
+
+.truncate {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3; /* Number of lines to show */
+    line-clamp: 3; /* Number of lines to show */
+}
