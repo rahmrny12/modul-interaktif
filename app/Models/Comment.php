@@ -4,11 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use BeyondCode\Comments\Traits\HasComments;
 
-class Module extends Model
+class Comment extends Model
 {
-    use HasFactory, HasComments;
-
+    use HasFactory;
     protected $guarded = ['id'];
 }

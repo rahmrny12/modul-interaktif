@@ -18,5 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/example', function () {
     return view('layouts.app-example');
 });
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/modules/{id}', [HomeController::class, 'show']);

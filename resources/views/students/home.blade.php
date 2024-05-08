@@ -10,7 +10,7 @@
     </section> --}}
     <section id="modules-section">
         <div class="container my-4">
-            @livewire('modules-component')
+            @livewire('modules')
         </div>
     </section>
 @endsection

@@ -5,8 +5,9 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 use App\Models\Category;
 
-class ModulesComponent extends Component
+class Modules extends Component
 {
+    public $modules;
     public $categories;
     public $selectedCategoryId;
 
@@ -14,17 +15,22 @@ class ModulesComponent extends Component
     {
         $this->categories = Category::all();
         $this->selectedCategoryId = $this->categories->first()->id;
+        $this->refreshModules();
     }
 
     public function render()
     {
-        return view('livewire.modules-component', [
-            'modules' => Category::find($this->selectedCategoryId)->modules ?? []
-        ]);
+        return view('livewire.modules');
     }
 
     public function changeCategory($categoryId)
     {
         $this->selectedCategoryId = $categoryId;
+        $this->refreshModules();
+    }
+
+    public function refreshModules()
+    {
+        $this->modules = Category::find($this->selectedCategoryId)->modules ?? [];
     }
 }
